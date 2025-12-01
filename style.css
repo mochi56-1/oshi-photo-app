@@ -175,3 +175,11 @@ button#downloadBtn:active {
 .card-control-group input[type="range"] {
   flex: 1;
 }
+.privacy-link {
+  text-align: center;
+  margin-top: 30px;
+}
+.privacy-link a {
+  color: #d946ef; /* おしゃれなピンク紫 */
+  text-decoration: none;
+}
