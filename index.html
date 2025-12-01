@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>推し写真ツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>推し写真ツール</h1>
+
+    <!-- ★ モード切り替え -->
+    <div class="mode-selector">
+      <label>
+        <input type="radio" name="mode" value="compress" checked>
+        圧縮
+      </label>
+      <label>
+        <input type="radio" name="mode" value="card">
+        トレカサイズ加工
+      </label>
+    </div>
+
+    <input type="file" id="fileInput" accept="image/*">
+     <p id="notice" class="notice">
+  ※画像の加工・圧縮により、元の画質と少し異なる場合があります。<br>
+  ※アップロードした画像はサーバーに保存されません（すべて端末内で処理されます）。
+</p>
+
+    <div id="info">
+      <p id="originalInfo"></p>
+      <p id="compressedInfo"></p>
+    </div>
+
+    <!-- ★ トレカ用の位置・拡大コントロール -->
+    <div id="cardControls" style="display:none;">
+      <div class="card-control-group">
+        <label for="cardOffsetX">位置（左右）</label>
+        <input type="range" id="cardOffsetX" min="-100" max="100" value="0">
+      </div>
+      <div class="card-control-group">
+        <label for="cardOffsetY">位置（上下）</label>
+        <input type="range" id="cardOffsetY" min="-100" max="100" value="0">
+      </div>
+      <div class="card-control-group">
+        <label for="cardZoom">拡大</label>
+        <input type="range" id="cardZoom" min="0" max="100" value="0">
+      </div>
+    </div>
+
+    <canvas id="canvas" style="max-width: 100%; display: none;"></canvas>
+
+    <div id="previewArea">
+      <h2>プレビュー</h2>
+      <img id="preview" alt="" style="max-width: 100%; display: none;">
+    </div>
+
+    <button id="downloadBtn" style="display: none;">画像をダウンロード</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
