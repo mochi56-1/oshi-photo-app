@@ -183,9 +183,4 @@ button#downloadBtn:active {
   color: #d946ef; /* おしゃれなピンク紫 */
   text-decoration: none;
 }
-.privacy-link {
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
+
